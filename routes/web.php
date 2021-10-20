@@ -19,3 +19,11 @@ Route::get('/', function () {
 });
 
 Route::get('/product/{id}', [ProductController::class , 'show']);
+
+Route::get('/{any}', function () {
+    return view('post');
+})->where('any', '.*');
+
+Route::get('/test', function(){
+    dd('test');
+});

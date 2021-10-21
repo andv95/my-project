@@ -14,16 +14,16 @@ use App\Http\Controllers\ProductController;
 |
 */
 
-Route::get('/', function () {
+Route::get('/welcome', function () {
     return view('welcome');
 });
 
 Route::get('/product/{id}', [ProductController::class , 'show']);
 
-Route::get('/{any}', function () {
-    return view('post');
-})->where('any', '.*');
 
-Route::get('/test', function(){
-    dd('test');
+Route::get('/', function (){
+   return view('index');
 });
+
+
+Route::resource('category','CategoryController');
